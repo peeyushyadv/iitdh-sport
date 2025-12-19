@@ -9,13 +9,16 @@
     box-sizing: border-box;
 }
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
     color: #1e293b;
-    line-height: 1.7;
+    line-height: 1.6;
     background: radial-gradient(circle at top, #eef2ff, #f8fafc);
+    overflow-x: hidden;
 }
 
 /* ==================================================
@@ -24,7 +27,7 @@ body {
 .container {
     max-width: 1200px;
     margin: auto;
-    padding: 0 1.5rem;
+    padding: 0 1rem;
 }
 
 /* ==================================================
@@ -49,15 +52,18 @@ header {
     display: flex;
     align-items: center;
     gap: 0.6rem;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 800;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     color: #e0f2fe;
     text-decoration: none;
 }
 
-.logo img { height: 40px; }
+.logo img {
+    height: 38px;
+}
 
+/* Navigation */
 .nav-list {
     list-style: none;
     display: flex;
@@ -84,14 +90,35 @@ header {
     transition: width 0.3s ease;
 }
 
-.nav-list a:hover { color: #67e8f9; }
-.nav-list a:hover::after { width: 100%; }
+.nav-list a:hover {
+    color: #67e8f9;
+}
+
+.nav-list a:hover::after {
+    width: 100%;
+}
+
+/* Mobile Toggle */
+.mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.mobile-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #ffffff;
+    margin: 6px 0;
+}
 
 /* ==================================================
    HERO
 ================================================== */
 .hero {
-    height: 60vh;
+    min-height: 50vh;
     display: flex;
     align-items: center;
     position: relative;
@@ -107,34 +134,38 @@ header {
     z-index: -1;
 }
 
-.hero-content { color: #fff; }
+.hero-content {
+    color: #ffffff;
+}
 
 .hero-content h1 {
-    font-size: clamp(2.6rem, 4vw, 4.5rem);
+    font-size: clamp(2.2rem, 5vw, 4.5rem);
     font-weight: 800;
 }
 
 .hero-content p {
     max-width: 600px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     opacity: 0.9;
 }
 
 /* ==================================================
    SECTION BASE
 ================================================== */
-.section { padding: 5rem 0; }
+.section {
+    padding: 3.5rem 0;
+}
 
 .section.container {
     background: linear-gradient(180deg, #ffffff, #f1f5f9);
     border-radius: 20px;
-    padding: 4rem;
-    margin: 3rem auto;
+    padding: 2.5rem;
+    margin: 2.5rem auto;
     box-shadow: 0 30px 70px rgba(15,23,42,0.08);
 }
 
 .section h2 {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
     margin-bottom: 2rem;
 }
 
@@ -148,7 +179,7 @@ header {
 }
 
 .panel-title {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 1.2rem;
 }
@@ -164,11 +195,11 @@ header {
 }
 
 /* ==================================================
-   CALENDAR
+   CALENDAR & EVENTS
 ================================================== */
 .calendar-card,
 .events-card {
-    background: #fff;
+    background: #ffffff;
     padding: 2rem;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.08);
@@ -176,17 +207,18 @@ header {
 
 .calendar-header {
     background: #ef4444;
-    color: #fff;
+    color: #ffffff;
     padding: 0.8rem 1rem;
     border-radius: 12px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .calendar-header button {
     background: none;
     border: none;
-    color: #fff;
+    color: #ffffff;
     font-size: 1.3rem;
     cursor: pointer;
 }
@@ -213,24 +245,22 @@ header {
     background: #fee2e2;
 }
 
-/* ==================================================
-   EVENTS
-================================================== */
 .event-item {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.2rem;
     padding: 1.2rem;
     background: #fff5f5;
     border-radius: 16px;
     border-left: 4px solid #ef4444;
+    margin-bottom: 1rem;
 }
 
 .event-date {
-    width: 70px;
-    height: 70px;
+    width: 64px;
+    height: 64px;
     background: linear-gradient(135deg, #ef4444, #f97316);
     border-radius: 14px;
-    color: #fff;
+    color: #ffffff;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -238,17 +268,17 @@ header {
 }
 
 /* ==================================================
-   SLIDERS (MULTI-VIEW)
+   SLIDERS (MOBILE SAFE)
 ================================================== */
 .slider {
     position: relative;
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .slides {
     display: flex;
     gap: 1.5rem;
-    transition: transform 0.5s ease;
 }
 
 .slide {
@@ -256,9 +286,9 @@ header {
     border-radius: 16px;
 }
 
-/* Gallery: 3 images */
+/* Gallery */
 #gallery-slider .slide {
-    width: calc(100% / 3 - 1rem);
+    min-width: 280px;
 }
 
 #gallery-slider img {
@@ -268,38 +298,22 @@ header {
     border-radius: 16px;
 }
 
-/* Contacts: 2 cards */
+/* Contacts */
 #contact-slider .slide {
-    width: calc(100% / 2 - 1rem);
+    min-width: 300px;
     display: flex;
     gap: 1.5rem;
-    padding: 2rem;
+    padding: 1.5rem;
     align-items: center;
     background: linear-gradient(135deg, #eef2ff, #f8fafc);
 }
-
-/* Nav buttons */
-.nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(15,23,42,0.75);
-    color: #fff;
-    border: none;
-    padding: 10px 14px;
-    cursor: pointer;
-    border-radius: 6px;
-}
-
-.nav.prev { left: 10px; }
-.nav.next { right: 10px; }
 
 /* ==================================================
    CONTACT DETAILS
 ================================================== */
 .contact-image img {
-    width: 140px;
-    height: 170px;
+    width: 130px;
+    height: 160px;
     object-fit: cover;
     border-radius: 12px;
 }
@@ -318,25 +332,6 @@ header {
 }
 
 /* ==================================================
-   RESPONSIVE
-================================================== */
-@media (max-width: 1024px) {
-    .programs-layout { grid-template-columns: 1fr; }
-
-    #gallery-slider .slide { width: calc(100% / 2 - 1rem); }
-    #contact-slider .slide { width: 100%; }
-}
-
-@media (max-width: 600px) {
-    #gallery-slider .slide { width: 100%; }
-
-    #contact-slider .slide {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-/* ==================================================
    FOOTER
 ================================================== */
 .footer {
@@ -344,4 +339,54 @@ header {
     color: #e5e7eb;
     text-align: center;
     padding: 1.5rem 0;
+}
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+@media (max-width: 1024px) {
+    .programs-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .nav-list {
+        position: absolute;
+        top: 72px;
+        right: 0;
+        background: #0f172a;
+        flex-direction: column;
+        width: 220px;
+        padding: 1rem;
+        display: none;
+    }
+
+    #navbar.active .nav-list {
+        display: flex;
+    }
+
+    .mobile-toggle {
+        display: block;
+    }
+
+    .section.container {
+        padding: 2rem 1.5rem;
+    }
+
+    #contact-slider .slide {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .section h2 {
+        font-size: 1.7rem;
+    }
 }
