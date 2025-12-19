@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIT DHARWAD</title>
+
+    <!-- logo -->
+    <link rel="icon" type="image/png" href="logoiitdh.png">
+    <link rel="apple-touch-icon" href="logoiitdh.png">
+
+    <link rel="stylesheet" href="dharwar.css">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+    <div class="container nav-container">
+        <div class="logo">
+            <a><img src="logoiitdh.png"> IIT DHARWAD</a>
+        </div>
+        <nav id="navbar">
+            <ul class="nav-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-toggle" id="mobile-toggle">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section id="home" class="hero">
+    <div class="hero-content container">
+        <h1>SPORTS @IIT DH</h1>
+        <p>At IIT DHARWAD — Fostering Sportsmanship and Excellence</p>
+    </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="section container">
+    <h2>About</h2>
+    <p>
+        The students at IIT Dharwad are encouraged to be active participants in sports year-round. The institute has numerous sporting events including Inter Hostels General Championships, Inter IIT competitions, etc. The support provided by IIT Dharwad towards Athletic Excellence includes offering athletes high-quality sports facilities (eg: basketball courts, volleyball courts, soccer & cricket fields) which are continually being improved on and in development swimming pool. A second means of promoting teamwork, discipline and Good Sportsmanship within IIT Dharwad’s community is through the opportunity for Faculty to partner with students in developing their Skills and creating an enlivening format for Athletics at the Institute.
+    </p>
+</section>
+
+<!-- ================= PROGRAMS ================= -->
+<section id="programs" class="section container">
+    <h2>Programs & Events</h2>
+
+    <div class="programs-layout">
+
+        <!-- CALENDAR PANEL -->
+        <div class="calendar-card">
+            <h3 class="panel-title">Calendar</h3>
+
+            <div class="calendar">
+                <div class="calendar-header">
+                    <button id="prevMonth">&#10094;</button>
+                    <h4 id="monthYear">December 2025</h4>
+                    <button id="nextMonth">&#10095;</button>
+                </div>
+
+                <div class="calendar-days">
+                    <span>Mon</span><span>Tue</span><span>Wed</span>
+                    <span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+                </div>
+
+                <div class="calendar-dates" id="calendarDates">
+                    <!-- JS populated -->
+                </div>
+            </div>
+        </div>
+
+        <!-- UPCOMING EVENTS PANEL -->
+        <div class="events-card">
+            <h3 class="panel-title">Upcoming Events</h3>
+
+            <div class="event-filters">
+                <button class="active">All</button>
+                <button>Workshop</button>
+                <button>Sports</button>
+            </div>
+
+            <div class="event-list">
+
+                <!-- EVENT ITEM -->
+                <div class="event-item">
+                    <div class="event-date">
+                        <span class="day">13</span>
+                        <span class="month">DEC</span>
+                    </div>
+                    <div class="event-info">
+                        <h4>Inter IIT Student Sports Meet</h4>
+                        <p>Inter IIT Student Sports Meet</p>
+                        <span class="location">IIT Madras, IIT Hyderabad, IIT Tirupati</span>
+                    </div>
+                </div>
+
+                <div class="event-item">
+                    <div class="event-date">
+                        <span class="day">24</span>
+                        <span class="month">DEC</span>
+                    </div>
+                    <div class="event-info">
+                        <h4>Inter IIT Staff Sports Meet</h4>
+                        <p>Inter IIT Staff Sports Meet</p>
+                        <span class="location">IIT Hyderabad</span>
+                    </div>
+                </div>
+
+                <div class="event-item">
+                    <div class="event-date">
+                        <span class="day">25</span>
+                        <span class="month">DEC</span>
+                    </div>
+                    <div class="event-info">
+                        <h4>Annual Sports Conclave 2025</h4>
+                        <p>Annual institute-level sports conclave</p>
+                        <span class="location">IIT Dharwad</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section id="gallery" class="section container">
+    <h2>Gallery</h2>
+
+    <div id="gallery-slider" class="slider">
+        <div class="slides">
+            <div class="slide"><img src="image1.jpg" alt="Gallery Image 1"></div>
+            <div class="slide"><img src="image2.jpg" alt="Gallery Image 2"></div>
+            <div class="slide"><img src="image3.jpg" alt="Gallery Image 3"></div>
+        </div>
+        <button class="nav prev">&#10094;</button>
+        <button class="nav next">&#10095;</button>
+    </div>
+</section>
+
+<!-- ================= CONTACTS ================= -->
+<section id="contact" class="section container">
+    <h2>Contacts</h2>
+
+    <div id="contact-slider" class="slider">
+        <div class="slides">
+
+            <!-- CONTACT CARD -->
+            <div class="slide">
+                <div class="contact-image">
+                    <img src="Prabhu1 - Prabhu R.jpg" alt="Prof R Prabhu">
+                </div>
+                <div>
+                    <h3>Prof R Prabhu</h3>
+                    <p>Dean SW</p>
+                    <strong>Email:</strong>
+                    <a href="mailto:deansw@iitdh.ac.in" class="email-link">
+                        <span class="email-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M2 4h20v16H2V4zm10 7L4 6h16l-8 5z"/>
+                            </svg>
+                        </span>
+                        deansw@iitdh.ac.in
+                    </a>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="contact-image">
+                    <img src="Dr. Sontti Somasekhara Goud.jpg" alt="Dr Sontti Goud">
+                </div>
+                <div>
+                    <h3>Dr Sontti Goud</h3>
+                    <p>FiC HPC and Sports</p>
+                    <strong>Email:</strong>
+                    <a href="mailto:fic.sw.sports@iitdh.ac.in" class="email-link">
+                        <span class="email-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M2 4h20v16H2V4zm10 7L4 6h16l-8 5z"/>
+                            </svg>
+                        </span>
+                        fic.sw.sports@iitdh.ac.in
+                    </a>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="contact-image">
+                    <img src="Ravi - Ravi Ghalimath.jpg" alt="Ravi Galimath">
+                </div>
+                <div>
+                    <h3>Ravi Shivprakash Galimath</h3>
+                    <p>Junior Sports Officer</p>
+                    <strong>Email:</strong>
+                    <a href="mailto:ravi@iitdh.ac.in" class="email-link">
+                        <span class="email-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M2 4h20v16H2V4zm10 7L4 6h16l-8 5z"/>
+                            </svg>
+                        </span>
+                        ravi@iitdh.ac.in
+                    </a>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="contact-image">
+                    <img src="Ramesh - Ramesh G.png" alt="Ramesh G">
+                </div>
+                <div>
+                    <h3>Gundaveni Ramesh</h3>
+                    <p>Junior Sports Officer</p>
+                    <strong>Email:</strong>
+                    <a href="mailto:rameshg@iitdh.ac.in" class="email-link">
+                        <span class="email-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M2 4h20v16H2V4zm10 7L4 6h16l-8 5z"/>
+                            </svg>
+                        </span>
+                        rameshg@iitdh.ac.in
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="slide">
+                <div class="contact-image">
+                    <img src="Keerthi Kumar.jpeg" alt="keerthi kumar">
+                </div>
+                <div>
+                    <h3>Dr. Keerthi kumar</h3>
+                    <p>Sports Officer</p>
+                    <strong>Email:</strong>
+                    <a href="mailto:keerthi.kumar@iitdh.ac.in" class="email-link">
+                        <span class="email-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M2 4h20v16H2V4zm10 7L4 6h16l-8 5z"/>
+                            </svg>
+                        </span>
+                        keerthi.kumar@iitdh.ac.in
+                    </a>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="contact-image">
+                    <img src="rejesh.jpg" alt="Rajeshwara Rao">
+                </div>
+                <div>
+                    <h3> Prof Rajeshwara Rao M</h3>
+                    <p>Associate Dean SW</p>
+                    <strong>Email:</strong>
+                    <a href="mailto:adean.sw.gymkhana@iitdh.ac.in" class="email-link">
+                        <span class="email-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M2 4h20v16H2V4zm10 7L4 6h16l-8 5z"/>
+                            </svg>
+                        </span>
+                        adean.sw.gymkhana@iitdh.ac.in
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="nav prev">&#10094;</button>
+        <button class="nav next">&#10095;</button>
+    </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer container">
+    <p>&copy; IIT DHARWAD SPORTS</p>
+</footer>
+
+<script src="dharwar.js"></script>
+</body>
+</html>

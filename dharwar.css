@@ -1,0 +1,347 @@
+/* ==================================================
+   GLOBAL RESET & BASE
+================================================== */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+    color: #1e293b;
+    line-height: 1.7;
+    background: radial-gradient(circle at top, #eef2ff, #f8fafc);
+}
+
+/* ==================================================
+   CONTAINER
+================================================== */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 1.5rem;
+}
+
+/* ==================================================
+   HEADER & NAVBAR
+================================================== */
+header {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.nav-container {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #e0f2fe;
+    text-decoration: none;
+}
+
+.logo img { height: 40px; }
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-list a {
+    color: #e5e7eb;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.nav-list a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #22d3ee, #a78bfa);
+    transition: width 0.3s ease;
+}
+
+.nav-list a:hover { color: #67e8f9; }
+.nav-list a:hover::after { width: 100%; }
+
+/* ==================================================
+   HERO
+================================================== */
+.hero {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, rgba(15,23,42,0.75), rgba(15,23,42,0.45)),
+        url("banner-01.jpg") center / cover no-repeat;
+    z-index: -1;
+}
+
+.hero-content { color: #fff; }
+
+.hero-content h1 {
+    font-size: clamp(2.6rem, 4vw, 4.5rem);
+    font-weight: 800;
+}
+
+.hero-content p {
+    max-width: 600px;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* ==================================================
+   SECTION BASE
+================================================== */
+.section { padding: 5rem 0; }
+
+.section.container {
+    background: linear-gradient(180deg, #ffffff, #f1f5f9);
+    border-radius: 20px;
+    padding: 4rem;
+    margin: 3rem auto;
+    box-shadow: 0 30px 70px rgba(15,23,42,0.08);
+}
+
+.section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+}
+
+/* ==================================================
+   PROGRAMS LAYOUT
+================================================== */
+.programs-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 2.5rem;
+}
+
+.panel-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+}
+
+.panel-title::after {
+    content: "";
+    width: 48px;
+    height: 4px;
+    background: #ef4444;
+    display: block;
+    margin-top: 6px;
+    border-radius: 2px;
+}
+
+/* ==================================================
+   CALENDAR
+================================================== */
+.calendar-card,
+.events-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.calendar-header {
+    background: #ef4444;
+    color: #fff;
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.calendar-header button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.calendar-days,
+.calendar-dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.calendar-days span {
+    font-weight: 600;
+    color: #6b7280;
+}
+
+.calendar-dates div {
+    padding: 0.7rem;
+    border-radius: 10px;
+}
+
+.calendar-dates div:hover {
+    background: #fee2e2;
+}
+
+/* ==================================================
+   EVENTS
+================================================== */
+.event-item {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.2rem;
+    background: #fff5f5;
+    border-radius: 16px;
+    border-left: 4px solid #ef4444;
+}
+
+.event-date {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #ef4444, #f97316);
+    border-radius: 14px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ==================================================
+   SLIDERS (MULTI-VIEW)
+================================================== */
+.slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    gap: 1.5rem;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    flex-shrink: 0;
+    border-radius: 16px;
+}
+
+/* Gallery: 3 images */
+#gallery-slider .slide {
+    width: calc(100% / 3 - 1rem);
+}
+
+#gallery-slider img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+/* Contacts: 2 cards */
+#contact-slider .slide {
+    width: calc(100% / 2 - 1rem);
+    display: flex;
+    gap: 1.5rem;
+    padding: 2rem;
+    align-items: center;
+    background: linear-gradient(135deg, #eef2ff, #f8fafc);
+}
+
+/* Nav buttons */
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(15,23,42,0.75);
+    color: #fff;
+    border: none;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.nav.prev { left: 10px; }
+.nav.next { right: 10px; }
+
+/* ==================================================
+   CONTACT DETAILS
+================================================== */
+.contact-image img {
+    width: 140px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.email-link {
+    display: inline-flex;
+    gap: 8px;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.email-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+@media (max-width: 1024px) {
+    .programs-layout { grid-template-columns: 1fr; }
+
+    #gallery-slider .slide { width: calc(100% / 2 - 1rem); }
+    #contact-slider .slide { width: 100%; }
+}
+
+@media (max-width: 600px) {
+    #gallery-slider .slide { width: 100%; }
+
+    #contact-slider .slide {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ==================================================
+   FOOTER
+================================================== */
+.footer {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #e5e7eb;
+    text-align: center;
+    padding: 1.5rem 0;
+}
